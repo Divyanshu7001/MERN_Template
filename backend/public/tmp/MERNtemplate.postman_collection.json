@@ -1,0 +1,619 @@
+{
+	"info": {
+		"_postman_id": "e550bc48-9dbb-430a-9e99-54171cf1d6bc",
+		"name": "MERNtemplate",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31711440"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "createUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "fullName",
+									"value": "Rohit Ghosh",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "rohit1234",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "rohitghosh@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "rohit1234@",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{userServer}}/createUser",
+							"host": [
+								"{{userServer}}"
+							],
+							"path": [
+								"createUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "loginUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"rohit1234@gmail.com\",\r\n    \"password\":\"rohit1234@\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{userServer}}/loginUser",
+							"host": [
+								"{{userServer}}"
+							],
+							"path": [
+								"loginUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "changePassword",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MDJjZTJhNmRiNmVjNTRlMzc1MmQ2NyIsImlhdCI6MTcyODIzNzA5OSwiZXhwIjoxNzI4ODQxODk5fQ.GCtzAHJzq5GldThHRlEkLc7mSzbtogacxtvciLTn_N0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"oldPassword\":\"rohit1234@\",\r\n    \"newPassword\":\"rohit7001@\"\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{userServer}}/changePassword",
+							"host": [
+								"{{userServer}}"
+							],
+							"path": [
+								"changePassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MDJkYjNlN2YxMzBjZGJhYWU5MTc4YyIsImlhdCI6MTcyODI0MDQ5NCwiZXhwIjoxNzI4ODQ1Mjk0fQ.OKoXQAF4EEs8-clZRMU5xizMf5qpwAoGBov3hZp4kbo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"rohit@gmail.com\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{userServer}}/updateUser",
+							"host": [
+								"{{userServer}}"
+							],
+							"path": [
+								"updateUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MDJkYjNlN2YxMzBjZGJhYWU5MTc4YyIsImlhdCI6MTcyODI0MDQ5NCwiZXhwIjoxNzI4ODQ1Mjk0fQ.OKoXQAF4EEs8-clZRMU5xizMf5qpwAoGBov3hZp4kbo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{userServer}}/deleteUser",
+							"host": [
+								"{{userServer}}"
+							],
+							"path": [
+								"deleteUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateAvatar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MDJkYjNlN2YxMzBjZGJhYWU5MTc4YyIsImlhdCI6MTcyODI0MDQ5NCwiZXhwIjoxNzI4ODQ1Mjk0fQ.OKoXQAF4EEs8-clZRMU5xizMf5qpwAoGBov3hZp4kbo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "avatar",
+									"type": "file",
+									"src": "C:\\Users\\DIVYANSHU\\Downloads\\Hero(1).png"
+								}
+							],
+							"options": {
+								"formdata": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{userServer}}/updateAvatar",
+							"host": [
+								"{{userServer}}"
+							],
+							"path": [
+								"updateAvatar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logoutUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MDJjZTlhNmRiNmVjNTRlMzc1MmQ2ZCIsImlhdCI6MTcyODIzNzU4MywiZXhwIjoxNzI4ODQyMzgzfQ.wwowBjak2IFKDQPrt3HX3Mkc7gm0-ALegvINve-KyK4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{userServer}}/logoutUser",
+							"host": [
+								"{{userServer}}"
+							],
+							"path": [
+								"logoutUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MDJjMGJjYWM5NzZiOWNlOGZlMWQ0YiIsImlhdCI6MTcyODIzMzY2MCwiZXhwIjoxNzI4ODM4NDYwfQ.ZCt1z8YsMk-R3srxzKqmOuM3ILNC8AddcpiDvSXDOAM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{userServer}}/getUser",
+							"host": [
+								"{{userServer}}"
+							],
+							"path": [
+								"getUser"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admins",
+			"item": [
+				{
+					"name": "createAdmin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullName\":\"Rohan\",\r\n    \"username\":\"rohan7001\",\r\n    \"email\":\"rohanadmin@gmail.com\",\r\n    \"password\":\"rohan1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{adminServer}}/createAdmin",
+							"host": [
+								"{{adminServer}}"
+							],
+							"path": [
+								"createAdmin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "loginAdmin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"rohanadmin@gmail.com\",\r\n    \"password\": \"rohan1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{adminServer}}/loginAdmin",
+							"host": [
+								"{{adminServer}}"
+							],
+							"path": [
+								"loginAdmin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "changePassword",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MDJmMGY0Nzc4ZTFjM2FiNzUyNDVmNyIsImlhdCI6MTcyODI0NjAzMywiZXhwIjoxNzI4ODUwODMzfQ.cFqu2GOdWSyGayxlHsYbKFdHJMxr-OU0guzmOi4tp60",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"oldPassword\":\"rohan1234\",\r\n    \"newPassword\":\"rohan12345@\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{adminServer}}/changePassword",
+							"host": [
+								"{{adminServer}}"
+							],
+							"path": [
+								"changePassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MDJmMGY0Nzc4ZTFjM2FiNzUyNDVmNyIsImlhdCI6MTcyODI0NjAzMywiZXhwIjoxNzI4ODUwODMzfQ.cFqu2GOdWSyGayxlHsYbKFdHJMxr-OU0guzmOi4tp60",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"6702f0b5dad684336251c1c7\",\r\n    \"email\":\"rohit1234@gmail.com\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{adminServer}}/updateUser",
+							"host": [
+								"{{adminServer}}"
+							],
+							"path": [
+								"updateUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MDJmMGY0Nzc4ZTFjM2FiNzUyNDVmNyIsImlhdCI6MTcyODI0NjAzMywiZXhwIjoxNzI4ODUwODMzfQ.cFqu2GOdWSyGayxlHsYbKFdHJMxr-OU0guzmOi4tp60",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"6702f97d819d54f192d5b431\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{adminServer}}/deleteUser",
+							"host": [
+								"{{adminServer}}"
+							],
+							"path": [
+								"deleteUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteAdmin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MDJmMGY0Nzc4ZTFjM2FiNzUyNDVmNyIsImlhdCI6MTcyODI0NjAzMywiZXhwIjoxNzI4ODUwODMzfQ.cFqu2GOdWSyGayxlHsYbKFdHJMxr-OU0guzmOi4tp60",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{adminServer}}/deleteAdmin",
+							"host": [
+								"{{adminServer}}"
+							],
+							"path": [
+								"deleteAdmin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateAdmin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MDJlYzU2NGE1NTFmOTM2ZjMwMWEzYyIsImlhdCI6MTcyODI0NDkyNywiZXhwIjoxNzI4ODQ5NzI3fQ.w5EB_wzMjEHHoWQzCahYyOuFl8pf2gsKbHwuNuCJ0tw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"rohanadmin1234@gmail.com\"\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{adminServer}}/updateAdmin",
+							"host": [
+								"{{adminServer}}"
+							],
+							"path": [
+								"updateAdmin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logoutAdmin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MDJlYzU2NGE1NTFmOTM2ZjMwMWEzYyIsImlhdCI6MTcyODI0NDkyNywiZXhwIjoxNzI4ODQ5NzI3fQ.w5EB_wzMjEHHoWQzCahYyOuFl8pf2gsKbHwuNuCJ0tw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{adminServer}}/logoutAdmin",
+							"host": [
+								"{{adminServer}}"
+							],
+							"path": [
+								"logoutAdmin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAdmin",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MDJlYzU2NGE1NTFmOTM2ZjMwMWEzYyIsImlhdCI6MTcyODI0NDkyNywiZXhwIjoxNzI4ODQ5NzI3fQ.w5EB_wzMjEHHoWQzCahYyOuFl8pf2gsKbHwuNuCJ0tw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{adminServer}}/getAdmin",
+							"host": [
+								"{{adminServer}}"
+							],
+							"path": [
+								"getAdmin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllUsers",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MDJmMGY0Nzc4ZTFjM2FiNzUyNDVmNyIsImlhdCI6MTcyODI0NjAzMywiZXhwIjoxNzI4ODUwODMzfQ.cFqu2GOdWSyGayxlHsYbKFdHJMxr-OU0guzmOi4tp60",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{adminServer}}/getAllUsers",
+							"host": [
+								"{{adminServer}}"
+							],
+							"path": [
+								"getAllUsers"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
