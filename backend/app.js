@@ -9,6 +9,7 @@ import morgan from "morgan";
 const app = new express();
 
 app.use(morgan("combined"));
+
 app.use(
   cors({
     origin: [process.env.FRONTEND_URI],
@@ -16,9 +17,11 @@ app.use(
     credentials: true,
   })
 );
-app.use(cookieParser());
-app.use(bodyParser.json({ limit: "20kb" }));
-app.use(bodyParser.urlencoded({ extended: true }));
 
+app.use(cookieParser());
+
+app.use(bodyParser.json({ limit: "20kb" }));
+
+app.use(bodyParser.urlencoded({ extended: true }));
 
 export default app;

@@ -26,11 +26,17 @@ router.route("/createUser").post((req, res, next) => {
     next();
   }
 }, createUser);
+
 router.route("/loginUser").post(loginUser);
+
 router.route("/logoutUser").post(verifyUser, logoutUser);
+
 router.route("/getUser").get(verifyUser, getUserDetails);
+
 router.route("/changePassword").put(verifyUser, changePassword);
+
 router.route("/updateUser").put(verifyUser, updateUser);
+
 router.route("/updateAvatar").put(
   verifyUser,
   (req, res, next) => {
